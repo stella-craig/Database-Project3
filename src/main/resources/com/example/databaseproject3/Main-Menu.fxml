@@ -5,7 +5,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.databaseproject3.MainController">
     <children>
         <Label layoutX="144.0" layoutY="14.0" text="Welcome to Your Home Library!" textAlignment="CENTER">
@@ -13,32 +12,32 @@
                 <Font size="22.0" />
             </font>
         </Label>
-        <Button layoutX="245.0" layoutY="80.0" mnemonicParsing="false" text="Find Book Info">
+        <Button layoutX="245.0" layoutY="80.0" mnemonicParsing="false" onAction="#onFindBookInfoButtonClick" text="Find Book Info">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-        <Button layoutX="264.0" layoutY="185.0" mnemonicParsing="false" text="Borrows">
+        <Button layoutX="264.0" layoutY="185.0" mnemonicParsing="false" onAction="#onBorrowsButtonClick" text="Borrows">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-        <Button layoutX="256.0" layoutY="131.0" mnemonicParsing="false" text="New Book!">
+        <Button layoutX="256.0" layoutY="131.0" mnemonicParsing="false" onAction="#onNewBookButtonClick" text="New Book!">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-        <Button layoutX="243.0" layoutY="235.0" mnemonicParsing="false" text="Your Collection">
+        <Button layoutX="243.0" layoutY="235.0" mnemonicParsing="false" onAction="#onYourCollectionButtonClick" text="Your Collection">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-        <Button layoutX="266.0" layoutY="287.0" mnemonicParsing="false" text="Update">
+        <Button layoutX="266.0" layoutY="287.0" mnemonicParsing="false" onAction="#onUpdateButtonClick" text="Update">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-        <Button layoutX="277.0" layoutY="343.0" mnemonicParsing="false" text="Exit">
+        <Button layoutX="277.0" layoutY="343.0" mnemonicParsing="false" onAction="#onExitButtonClick" text="Exit">
             <font>
                 <Font size="14.0" />
             </font>
