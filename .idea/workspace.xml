@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0fdd1b05-4cd8-437e-9f42-3a08a673cea4" name="Changes" comment="-">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/databaseproject3/Functions_for_Find_Book_Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/databaseproject3/Functions_for_Find_Book_Info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/databaseproject3/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/databaseproject3/MainController.java" afterDir="false" />
-    </list>
+    <list default="true" id="0fdd1b05-4cd8-437e-9f42-3a08a673cea4" name="Changes" comment="-" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -91,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683335279368</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="andrews help">
+      <created>1683341206535</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1683341206535</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,6 +104,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="-" />
-    <option name="LAST_COMMIT_MESSAGE" value="-" />
+    <MESSAGE value="andrews help" />
+    <option name="LAST_COMMIT_MESSAGE" value="andrews help" />
   </component>
 </project>
