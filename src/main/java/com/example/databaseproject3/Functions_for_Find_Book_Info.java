@@ -18,7 +18,7 @@ public class Functions_for_Find_Book_Info {
             while (rs.next()) {
                 found = true;
                 // do something with the results, e.g. print them
-                System.out.println(rs.getString("Title") + " by " + rs.getString("Author"));
+                //System.out.println(rs.getString());
             }
             if (!found) {
                 System.out.println("No books found with the title: " + title);
