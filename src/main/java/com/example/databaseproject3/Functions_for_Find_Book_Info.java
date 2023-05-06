@@ -10,6 +10,7 @@ public class Functions_for_Find_Book_Info {
         String password = "Hickman21!";
 
         try {
+            Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(url, username, password);
             System.out.println("Connected to the database");
             // Do something with the connection...
@@ -31,6 +32,7 @@ public class Functions_for_Find_Book_Info {
         String password = "Hickman21!";
 
         try {
+            Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(url, username, password);
             System.out.println("Connected to the database");
             // Do something with the connection...
@@ -53,6 +55,7 @@ public class Functions_for_Find_Book_Info {
         String password = "Hickman21!";
 
         try {
+            Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(url, username, password);
             System.out.println("Connected to the database");
             // Do something with the connection...
@@ -74,6 +77,7 @@ public class Functions_for_Find_Book_Info {
         String password = "Hickman21!";
 
         try {
+            Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(url, username, password);
             System.out.println("Connected to the database");
             // Do something with the connection...
@@ -95,6 +99,7 @@ public class Functions_for_Find_Book_Info {
         String password = "Hickman21!";
 
         try {
+            Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(url, username, password);
             System.out.println("Connected to the database");
             // Do something with the connection...
@@ -116,6 +121,7 @@ public class Functions_for_Find_Book_Info {
         String password = "Hickman21!";
 
         try {
+            Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(url, username, password);
             System.out.println("Connected to the database");
             // Do something with the connection...
@@ -138,6 +144,7 @@ public class Functions_for_Find_Book_Info {
         String password = "Hickman21!";
 
         try {
+            Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(url, username, password);
             System.out.println("Connected to the database");
             // Do something with the connection...
@@ -160,6 +167,7 @@ public class Functions_for_Find_Book_Info {
         String password = "Hickman21!";
 
         try {
+            Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(url, username, password);
             System.out.println("Connected to the database");
             // Do something with the connection...
@@ -181,6 +189,7 @@ public class Functions_for_Find_Book_Info {
         String password = "Hickman21!";
 
         try {
+            Class.forName("com.mysql.jdbc.Driver");
             Connection conn = DriverManager.getConnection(url, username, password);
             System.out.println("Connected to the database");
             // Do something with the connection...
