@@ -15,10 +15,17 @@ public class Functions_for_Find_Book_Info {
             stmt.setString(1, "%" + title + "%");
             ResultSet rs = stmt.executeQuery();
             boolean found = false;
+
+            ResultSetMetaData metaData = rs.getMetaData();
+            int columnCount = metaData.getColumnCount();
+
             while (rs.next()) {
                 found = true;
-                // do something with the results, e.g. print them
-                //System.out.println(rs.getString());
+                // print all columns dynamically
+                for (int i = 1; i <= columnCount; i++) {
+                    System.out.print(metaData.getColumnName(i) + ": " + rs.getString(i) + " ");
+                }
+                System.out.println();
             }
             if (!found) {
                 System.out.println("No books found with the title: " + title);
@@ -27,6 +34,7 @@ public class Functions_for_Find_Book_Info {
             System.out.println("Unable to connect to the database: " + e.getMessage());
         }
     }
+
 
 
     public static void searchByISBN(String isbn) throws SQLException {
