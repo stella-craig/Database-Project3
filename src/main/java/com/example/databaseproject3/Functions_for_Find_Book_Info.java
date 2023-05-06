@@ -27,6 +27,7 @@ public class Functions_for_Find_Book_Info {
                 }
                 System.out.println();
             }
+            conn.close();
             if (!found) {
                 System.out.println("No books found with the title: " + title);
             }
@@ -60,12 +61,15 @@ public class Functions_for_Find_Book_Info {
                 }
                 System.out.println();
             }
+            conn.close();
             if (!found) {
                 System.out.println("No books found with the ISBN: " + isbn);
             }
+
         } catch (SQLException e) {
             System.out.println("Unable to connect to the database: " + e.getMessage());
         }
+
 
     }
 
