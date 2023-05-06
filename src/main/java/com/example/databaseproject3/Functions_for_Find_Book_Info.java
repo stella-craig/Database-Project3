@@ -80,6 +80,7 @@ public class Functions_for_Find_Book_Info {
         String username = "root";
         String password = "Hickman21!";
 
+        Class.forName("com.mysql.cj.jdbc.Driver");
         try (Connection conn = DriverManager.getConnection(url, username, password);
              PreparedStatement stmt = conn.prepareStatement("SELECT * FROM home_library.book JOIN home_library.author ON book.Author_id = author.Author_id WHERE author.First_Name = ?")) {
             stmt.setString(1, fName);
