@@ -9,17 +9,15 @@ public class Functions_for_Find_Book_Info {
         String username = "root";
         String password = "Hickman21!";
 
-        Class.forName("com.mysql.jdbc.Driver");
-        try {
-            Connection conn = DriverManager.getConnection(url, username, password);
-            System.out.println("Connected to the database");
-            // Do something with the connection...
-            Statement stmt = conn.createStatement();
-            String prompt = "SELECT * FROM home_library.Book WHERE Title = ";
-            prompt = prompt.concat(title);
-            prompt = prompt.concat(";");
-            ResultSet rs = stmt.executeQuery(prompt);
-            conn.close();
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        try (Connection conn = DriverManager.getConnection(url, username, password);
+             PreparedStatement stmt = conn.prepareStatement("SELECT * FROM home_library.Book WHERE Title = ?")) {
+            stmt.setString(1, title);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                // do something with the results, e.g. print them
+                System.out.println(rs.getString("Title") + " by " + rs.getString("Author"));
+            }
         } catch (SQLException e) {
             System.out.println("Unable to connect to the database: " + e.getMessage());
         }
