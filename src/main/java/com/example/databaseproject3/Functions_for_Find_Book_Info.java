@@ -57,7 +57,7 @@ public class Functions_for_Find_Book_Info {
             System.out.println("Connected to the database");
             // Do something with the connection...
             Statement stmt = conn.createStatement();
-            String prompt = "SELECT * FROM Book WHERE ISBN = ";
+            String prompt = "SELECT * FROM home_library.book JOIN home_library.author ON book.Author_id = author.Author_id WHERE author.First_Name = ";
             prompt = prompt.concat(fName);
             ResultSet rs = stmt.executeQuery(prompt);
             conn.close();
@@ -67,10 +67,68 @@ public class Functions_for_Find_Book_Info {
 
     }
 
+    public static void searchByAuthorLName(String lName) throws SQLException {
 
+        String url = "jdbc:mysql://localhost:3306/?useSSL=false";
+        String username = "root";
+        String password = "Hickman21!";
 
+        try {
+            Connection conn = DriverManager.getConnection(url, username, password);
+            System.out.println("Connected to the database");
+            // Do something with the connection...
+            Statement stmt = conn.createStatement();
+            String prompt = "SELECT * FROM home_library.book JOIN home_library.author ON book.Author_id = author.Author_id WHERE author.Last_Name = ";
+            prompt = prompt.concat(lName);
+            ResultSet rs = stmt.executeQuery(prompt);
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println("Unable to connect to the database: " + e.getMessage());
+        }
 
+    }
 
+    public static void searchByAuthorGender(String gender) throws SQLException {
+
+        String url = "jdbc:mysql://localhost:3306/?useSSL=false";
+        String username = "root";
+        String password = "Hickman21!";
+
+        try {
+            Connection conn = DriverManager.getConnection(url, username, password);
+            System.out.println("Connected to the database");
+            // Do something with the connection...
+            Statement stmt = conn.createStatement();
+            String prompt = "SELECT * FROM home_library.book JOIN home_library.author ON book.Author_id = author.Author_id WHERE author.Gender = ";
+            prompt = prompt.concat(gender);
+            ResultSet rs = stmt.executeQuery(prompt);
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println("Unable to connect to the database: " + e.getMessage());
+        }
+
+    }
+
+    public static void searchByYearPublished(String yearPub) throws SQLException {
+
+        String url = "jdbc:mysql://localhost:3306/?useSSL=false";
+        String username = "root";
+        String password = "Hickman21!";
+
+        try {
+            Connection conn = DriverManager.getConnection(url, username, password);
+            System.out.println("Connected to the database");
+            // Do something with the connection...
+            Statement stmt = conn.createStatement();
+            String prompt = "SELECT * FROM home_library.book WHERE book.Year_Published = ";
+            prompt = prompt.concat(yearPub);
+            ResultSet rs = stmt.executeQuery(prompt);
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println("Unable to connect to the database: " + e.getMessage());
+        }
+
+    }
 
 
 

@@ -112,19 +112,19 @@ public class MainController {
         else if(FBIauthorLNameBox.getText() != null || FBIauthorLNameBox.getText().length() != 0)
         {
             String lName = FBIauthorLNameBox.getText();
-            //TODO: put search by author last name function here
+            searchByAuthorLName(lName);
             //TODO: open new stage that displays the results
         }
         else if(FBIgenderBox.getText() != null || FBIgenderBox.getText().length() != 0)
         {
             String gender = FBIgenderBox.getText();
-            //TODO: put search by author gender function here
+            searchByAuthorGender(gender);
             //TODO: open new stage that displays the results
         }
         else if(FBIyearPubBox.getText() != null || FBIyearPubBox.getText().length() != 0)
         {
             String yearPub = FBIyearPubBox.getText();
-            //TODO: put search by year published function here
+            searchByYearPublished(yearPub);
             //TODO: open new stage that displays the results
         }
         else if(FBInumPagesBox.getText() != null || FBInumPagesBox.getText().length() != 0)
