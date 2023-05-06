@@ -4,7 +4,7 @@ import java.sql.*;
 public class Functions_for_Find_Book_Info {
 
     //search by title function
-    public static void searchByTitle(String title) throws SQLException {
+    public static void searchByTitle(String title) throws SQLException, ClassNotFoundException {
         String url = "jdbc:mysql://localhost:3306";
         String username = "root";
         String password = "Hickman21!";
@@ -21,8 +21,6 @@ public class Functions_for_Find_Book_Info {
             conn.close();
         } catch (SQLException e) {
             System.out.println("Unable to connect to the database: " + e.getMessage());
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
         }
 
     }
@@ -45,8 +43,6 @@ public class Functions_for_Find_Book_Info {
             conn.close();
         } catch (SQLException e) {
             System.out.println("Unable to connect to the database: " + e.getMessage());
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
         }
 
     }
@@ -68,7 +64,7 @@ public class Functions_for_Find_Book_Info {
             prompt = prompt.concat(fName);
             ResultSet rs = stmt.executeQuery(prompt);
             conn.close();
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             System.out.println("Unable to connect to the database: " + e.getMessage());
         }
 
@@ -90,7 +86,7 @@ public class Functions_for_Find_Book_Info {
             prompt = prompt.concat(lName);
             ResultSet rs = stmt.executeQuery(prompt);
             conn.close();
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             System.out.println("Unable to connect to the database: " + e.getMessage());
         }
 
@@ -112,7 +108,7 @@ public class Functions_for_Find_Book_Info {
             prompt = prompt.concat(gender);
             ResultSet rs = stmt.executeQuery(prompt);
             conn.close();
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             System.out.println("Unable to connect to the database: " + e.getMessage());
         }
 
@@ -134,7 +130,7 @@ public class Functions_for_Find_Book_Info {
             prompt = prompt.concat(yearPub);
             ResultSet rs = stmt.executeQuery(prompt);
             conn.close();
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             System.out.println("Unable to connect to the database: " + e.getMessage());
         }
 
@@ -157,7 +153,7 @@ public class Functions_for_Find_Book_Info {
             prompt = prompt.concat(numPages);
             ResultSet rs = stmt.executeQuery(prompt);
             conn.close();
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             System.out.println("Unable to connect to the database: " + e.getMessage());
         }
 
@@ -180,7 +176,7 @@ public class Functions_for_Find_Book_Info {
             prompt = prompt.concat(genre);
             ResultSet rs = stmt.executeQuery(prompt);
             conn.close();
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             System.out.println("Unable to connect to the database: " + e.getMessage());
         }
 
@@ -202,7 +198,7 @@ public class Functions_for_Find_Book_Info {
             prompt = prompt.concat(type);
             ResultSet rs = stmt.executeQuery(prompt);
             conn.close();
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             System.out.println("Unable to connect to the database: " + e.getMessage());
         }
 

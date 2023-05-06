@@ -108,7 +108,7 @@ public class MainController {
 
 
     @FXML
-    protected void FBIonSubmitButtonClick() throws SQLException {
+    protected void FBIonSubmitButtonClick() throws SQLException, ClassNotFoundException {
         if(FBItitleBox.getText() != null || FBItitleBox.getText().length() != 0)
         {
             String title = FBItitleBox.getText();
@@ -228,6 +228,11 @@ public class MainController {
         stage.setScene(scene);
         stage.show();
     }
+
+    ///////////////////////////////////////////////////////
+    //          BReturnBook.fxml                         //
+    ///////////////////////////////////////////////////////
+
 
 
 
