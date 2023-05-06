@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import static com.example.databaseproject3.Functions_for_BReturnBook.*;
 import static com.example.databaseproject3.Functions_for_Find_Book_Info.*;
 
 public class MainController {
@@ -236,6 +237,7 @@ public class MainController {
     @FXML    Button BRBback;
     @FXML    TextField BRBTitle;
     @FXML    TextField BRBISBN;
+    @FXML    Button BRBsubmit;
 
 
     @FXML
@@ -248,7 +250,34 @@ public class MainController {
     @FXML
     protected void BRBonSubmitButtonClick()
     {
+        int errorcode;
+        if(BRBTitle.getText() != null || BRBTitle.getText().length() != 0)
+        {
+            //search text
+            String title = BRBTitle.getText();
+            errorcode = booksByTitle(title);
+            if(errorcode == 1)
+            {
+                //change current location!
+            }
+            else
+            {
+                //error with num of books... ask user to be more specific
+                return;
+            }
+        }
+        else if(BRBISBN.getText() != null || BRBISBN.getText().length() != 0)
+        {
+            //search isbn
+        }
+        else {
+            //nothing was inputted
+            //error it babes
+            return;
+        }
 
+        Stage stage = (Stage) BRBsubmit.getScene().getWindow();
+        stage.close();
     }
 
 
