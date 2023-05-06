@@ -9,8 +9,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.SQLException;
 
-import static com.example.databaseproject3.Functions_for_Find_Book_Info.searchByISBN;
-import static com.example.databaseproject3.Functions_for_Find_Book_Info.searchByTitle;
+import static com.example.databaseproject3.Functions_for_Find_Book_Info.*;
 
 public class MainController {
 
@@ -107,7 +106,7 @@ public class MainController {
         else if(FBIauthorFNameBox.getText() != null || FBIauthorFNameBox.getText().length() != 0)
         {
             String fName = FBIauthorFNameBox.getText();
-            //TODO: put search by author first name function here
+            searchByAuthorFName(fName);
             //TODO: open new stage that displays the results
         }
         else if(FBIauthorLNameBox.getText() != null || FBIauthorLNameBox.getText().length() != 0)
