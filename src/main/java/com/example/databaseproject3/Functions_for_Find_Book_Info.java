@@ -11,18 +11,23 @@ public class Functions_for_Find_Book_Info {
 
         Class.forName("com.mysql.cj.jdbc.Driver");
         try (Connection conn = DriverManager.getConnection(url, username, password);
-             PreparedStatement stmt = conn.prepareStatement("SELECT * FROM home_library.Book WHERE Title = ?")) {
-            stmt.setString(1, title);
+             PreparedStatement stmt = conn.prepareStatement("SELECT * FROM home_library.Book WHERE Title LIKE ?")) {
+            stmt.setString(1, "%" + title + "%");
             ResultSet rs = stmt.executeQuery();
+            boolean found = false;
             while (rs.next()) {
+                found = true;
                 // do something with the results, e.g. print them
                 System.out.println(rs.getString("Title") + " by " + rs.getString("Author"));
+            }
+            if (!found) {
+                System.out.println("No books found with the title: " + title);
             }
         } catch (SQLException e) {
             System.out.println("Unable to connect to the database: " + e.getMessage());
         }
-
     }
+
 
     public static void searchByISBN(String isbn) throws SQLException {
 
