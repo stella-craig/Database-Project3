@@ -5,7 +5,7 @@ public class Functions_for_Find_Book_Info {
 
     //search by title function
     public static void searchByTitle(String title) throws SQLException {
-        String url = "jdbc:mysql://localhost:3306/?useSSL=false";
+        String url = "jdbc:mysql://localhost:3306";
         String username = "root";
         String password = "Hickman21!";
 
