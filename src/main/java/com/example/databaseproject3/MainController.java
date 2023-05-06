@@ -7,6 +7,10 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
+
+import static com.example.databaseproject3.Functions_for_Find_Book_Info.searchByISBN;
+import static com.example.databaseproject3.Functions_for_Find_Book_Info.searchByTitle;
 
 public class MainController {
 
@@ -82,35 +86,138 @@ public class MainController {
     @FXML
     protected void FBIonCancelButtonClick()
     {
-        Platform.exit();
+        Stage stage = (Stage) FBIcancel.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
-    protected void FBIonSubmitButtonClick()
-    {
-        Platform.exit();
+    protected void FBIonSubmitButtonClick() throws SQLException {
+        if(FBItitleBox.getText() != null || FBItitleBox.getText().length() != 0)
+        {
+            String title = FBItitleBox.getText();
+            searchByTitle(title);
+            //TODO: open new stage that displays the results
+        }
+        else if(FBIisbnBox.getText() != null || FBIisbnBox.getText().length() != 0)
+        {
+            String isbn = FBIisbnBox.getText();
+            searchByISBN(isbn);
+            //TODO: open new stage that displays the results
+        }
+        else if(FBIauthorFNameBox.getText() != null || FBIauthorFNameBox.getText().length() != 0)
+        {
+            String fName = FBIauthorFNameBox.getText();
+            //TODO: put search by author first name function here
+            //TODO: open new stage that displays the results
+        }
+        else if(FBIauthorLNameBox.getText() != null || FBIauthorLNameBox.getText().length() != 0)
+        {
+            String lName = FBIauthorLNameBox.getText();
+            //TODO: put search by author last name function here
+            //TODO: open new stage that displays the results
+        }
+        else if(FBIgenderBox.getText() != null || FBIgenderBox.getText().length() != 0)
+        {
+            String gender = FBIgenderBox.getText();
+            //TODO: put search by author gender function here
+            //TODO: open new stage that displays the results
+        }
+        else if(FBIyearPubBox.getText() != null || FBIyearPubBox.getText().length() != 0)
+        {
+            String yearPub = FBIyearPubBox.getText();
+            //TODO: put search by year published function here
+            //TODO: open new stage that displays the results
+        }
+        else if(FBInumPagesBox.getText() != null || FBInumPagesBox.getText().length() != 0)
+        {
+            String numPages = FBInumPagesBox.getText();
+            //TODO: put search by number of pages function here
+            //TODO: open new stage that displays the results
+        }
+        else if(FBIgenreBox.getText() != null || FBIgenreBox.getText().length() != 0)
+        {
+            String genre = FBIgenreBox.getText();
+            //TODO: put search by genre function here
+            //TODO: open new stage that displays the results
+        }
+        else if(FBIbookTypeBox.getText() != null || FBIbookTypeBox.getText().length() != 0)
+        {
+            String bookType = FBIbookTypeBox.getText();
+            //TODO: put search by book type function here
+            //TODO: open new stage that displays the results
+        }
+
+
+
+
+
+
+        //Close stage
+        Stage stage = (Stage) FBIsubmit.getScene().getWindow();
+        stage.close();
     }
+
+
+
 
 
     ///////////////////////////////////////////////////////
     //          New-Book.fxml                            //
     ///////////////////////////////////////////////////////
 
+    @FXML
+    protected void NBonBackButtonClick()
+    {
+        Stage stage = (Stage) NBback.getScene().getWindow();
+        stage.close();
+    }
+
+
+
+
 
     ///////////////////////////////////////////////////////
     //          Borrows.fxml                             //
     ///////////////////////////////////////////////////////
+
+    @FXML
+    protected void BonBackButtonClick()
+    {
+        Stage stage = (Stage) Bback.getScene().getWindow();
+        stage.close();
+    }
+
+
+
+
 
 
     ///////////////////////////////////////////////////////
     //          Your-Collection.fxml                     //
     ///////////////////////////////////////////////////////
 
+    @FXML
+    protected void YConBackButtonClick()
+    {
+        Stage stage = (Stage) YCback.getScene().getWindow();
+        stage.close();
+    }
+
+
+
+
+
 
     ///////////////////////////////////////////////////////
     //          Update.fxml                              //
     ///////////////////////////////////////////////////////
 
+    @FXML
+    protected void UonBackButtonClick()
+    {
+        Stage stage = (Stage) Uback.getScene().getWindow();
+        stage.close();
+    }
 
 
 }
