@@ -219,6 +219,15 @@ public class MainController {
         stage.close();
     }
 
+    @FXML
+    protected void BonReturnButtonClick() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("BReturnBook.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Stage stage = new Stage();
+        stage.setTitle("Return-Book");
+        stage.setScene(scene);
+        stage.show();
+    }
 
 
 
