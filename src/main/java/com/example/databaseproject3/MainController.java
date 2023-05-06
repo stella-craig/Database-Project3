@@ -260,6 +260,10 @@ public class MainController {
             if(errorcode == 1)
             {
                 //change current location!
+                String prompt = "UPDATE BOOK SET Curr_Location = Orig_Location WHERE title = ";
+                prompt = prompt.concat(title);
+                prompt = prompt.concat(";");
+                //TODO: connect to database
             }
             else
             {
@@ -279,6 +283,10 @@ public class MainController {
             if(errorcode == 1)
             {
                 //change current location!
+                String prompt = "UPDATE BOOK SET Curr_Location = Orig_Location WHERE ISBN = ";
+                prompt = prompt.concat(isbn);
+                prompt = prompt.concat(";");
+                //TODO: connect to database
             }
             else
             {
