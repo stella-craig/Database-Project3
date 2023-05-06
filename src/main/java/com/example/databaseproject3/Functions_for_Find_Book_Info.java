@@ -43,22 +43,31 @@ public class Functions_for_Find_Book_Info {
         String username = "root";
         String password = "Hickman21!";
 
-        try {
-            //Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(url, username, password);
-            System.out.println("Connected to the database");
-            // Do something with the connection...
-            Statement stmt = conn.createStatement();
-            String prompt = "SELECT * FROM Book WHERE ISBN = ";
-            prompt = prompt.concat(isbn);
-            prompt = prompt.concat(";");
-            ResultSet rs = stmt.executeQuery(prompt);
-            conn.close();
+        try (Connection conn = DriverManager.getConnection(url, username, password);
+             PreparedStatement stmt = conn.prepareStatement("SELECT * FROM home_library.Book WHERE ISBN = ?")) {
+            stmt.setString(1, isbn);
+            ResultSet rs = stmt.executeQuery();
+
+            ResultSetMetaData metaData = rs.getMetaData();
+            int columnCount = metaData.getColumnCount();
+
+            boolean found = false;
+            while (rs.next()) {
+                found = true;
+                for (int i = 1; i <= columnCount; i++) {
+                    System.out.print(metaData.getColumnName(i) + ": " + rs.getString(i) + " ");
+                }
+                System.out.println();
+            }
+            if (!found) {
+                System.out.println("No books found with the ISBN: " + isbn);
+            }
         } catch (SQLException e) {
             System.out.println("Unable to connect to the database: " + e.getMessage());
         }
 
     }
+
 
 
     public static void searchByAuthorFName(String fName) throws SQLException {
