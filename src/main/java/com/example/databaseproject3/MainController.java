@@ -238,6 +238,7 @@ public class MainController {
     @FXML    TextField BRBTitle;
     @FXML    TextField BRBISBN;
     @FXML    Button BRBsubmit;
+    @FXML    TextField BRBerror;
 
 
     @FXML
@@ -263,16 +264,36 @@ public class MainController {
             else
             {
                 //error with num of books... ask user to be more specific
+                String error = "Your Title returned ";
+                error = error.concat(String.valueOf(errorcode));
+                error = error.concat(" number of results. Please try again.");
+                BRBerror.setText(error);
                 return;
             }
         }
         else if(BRBISBN.getText() != null || BRBISBN.getText().length() != 0)
         {
             //search isbn
+            String isbn = BRBISBN.getText();
+            errorcode = booksByISBN(isbn);
+            if(errorcode == 1)
+            {
+                //change current location!
+            }
+            else
+            {
+                //error with num of books... ask user to be more specific
+                String error = "Your ISBN returned ";
+                error = error.concat(String.valueOf(errorcode));
+                error = error.concat(" number of results. Please try again.");
+                BRBerror.setText(error);
+                return;
+            }
         }
         else {
             //nothing was inputted
             //error it babes
+            BRBerror.setText("Please input either title or isbn.");
             return;
         }
 
