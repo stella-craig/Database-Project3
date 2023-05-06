@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.databaseproject3.MainController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.databaseproject3.MainController">
+   <children>
+      <Label layoutX="171.0" layoutY="82.0" text="Title" />
+      <TextField fx:id="BRBTitle" layoutX="245.0" layoutY="78.0" />
+      <TextField fx:id="BRBISBN" layoutX="246.0" layoutY="134.0" />
+      <Label layoutX="170.0" layoutY="138.0" text="ISBN" />
+      <Button layoutX="220.0" layoutY="272.0" mnemonicParsing="false" onAction="#BRBonSubmitButtonClick" text="Submit" />
+      <Button fx:id="BRBback" layoutX="388.0" layoutY="272.0" mnemonicParsing="false" onAction="#BRBonBackButtonClick" text="Back" />
+   </children>
 </AnchorPane>

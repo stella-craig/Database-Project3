@@ -233,8 +233,23 @@ public class MainController {
     //          BReturnBook.fxml                         //
     ///////////////////////////////////////////////////////
 
+    @FXML    Button BRBback;
+    @FXML    TextField BRBTitle;
+    @FXML    TextField BRBISBN;
 
 
+    @FXML
+    protected void BRBonBackButtonClick()
+    {
+        Stage stage = (Stage) BRBback.getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    protected void BRBonSubmitButtonClick()
+    {
+
+    }
 
 
 
