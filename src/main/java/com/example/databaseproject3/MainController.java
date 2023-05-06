@@ -4,6 +4,9 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -82,12 +85,27 @@ public class MainController {
     //          Find-Book-Info.fxml                      //
     ///////////////////////////////////////////////////////
 
+    @FXML    Label FBIError;
+    @FXML    Button FBIcancel;
+    @FXML    TextField FBItitleBox;
+    @FXML    TextField FBIisbnBox;
+    @FXML    TextField FBIauthorFnameBox;
+    @FXML    TextField FBIauthorLnameBox;
+    @FXML    TextField FBIgenderBox;
+    @FXML    TextField FBIyearPubBox;
+    @FXML    TextField FBInumPagesBox;
+    @FXML    TextField FBIgenreBox;
+    @FXML    TextField FBIbookTypeBox;
+    @FXML    Button FBIsubmit;
+
+
     @FXML
     protected void FBIonCancelButtonClick()
     {
         Stage stage = (Stage) FBIcancel.getScene().getWindow();
         stage.close();
     }
+
 
     @FXML
     protected void FBIonSubmitButtonClick() throws SQLException {
@@ -103,15 +121,15 @@ public class MainController {
             searchByISBN(isbn);
             //TODO: open new stage that displays the results
         }
-        else if(FBIauthorFNameBox.getText() != null || FBIauthorFNameBox.getText().length() != 0)
+        else if(FBIauthorFnameBox.getText() != null || FBIauthorFnameBox.getText().length() != 0)
         {
-            String fName = FBIauthorFNameBox.getText();
+            String fName = FBIauthorFnameBox.getText();
             searchByAuthorFName(fName);
             //TODO: open new stage that displays the results
         }
-        else if(FBIauthorLNameBox.getText() != null || FBIauthorLNameBox.getText().length() != 0)
+        else if(FBIauthorLnameBox.getText() != null || FBIauthorLnameBox.getText().length() != 0)
         {
-            String lName = FBIauthorLNameBox.getText();
+            String lName = FBIauthorLnameBox.getText();
             searchByAuthorLName(lName);
             //TODO: open new stage that displays the results
         }
@@ -130,26 +148,26 @@ public class MainController {
         else if(FBInumPagesBox.getText() != null || FBInumPagesBox.getText().length() != 0)
         {
             String numPages = FBInumPagesBox.getText();
-            //TODO: put search by number of pages function here
+            searchByPageNum(numPages);
             //TODO: open new stage that displays the results
         }
         else if(FBIgenreBox.getText() != null || FBIgenreBox.getText().length() != 0)
         {
             String genre = FBIgenreBox.getText();
-            //TODO: put search by genre function here
+            searchByGenre(genre);
             //TODO: open new stage that displays the results
         }
         else if(FBIbookTypeBox.getText() != null || FBIbookTypeBox.getText().length() != 0)
         {
             String bookType = FBIbookTypeBox.getText();
-            //TODO: put search by book type function here
+            searchByBookType(bookType);
             //TODO: open new stage that displays the results
         }
-
-
-
-
-
+        else
+        {
+            FBIError.setText("Please specify your search.");
+            return;
+        }
 
         //Close stage
         Stage stage = (Stage) FBIsubmit.getScene().getWindow();
@@ -164,6 +182,9 @@ public class MainController {
     //          New-Book.fxml                            //
     ///////////////////////////////////////////////////////
 
+    @FXML    Button NBback;
+
+
     @FXML
     protected void NBonBackButtonClick()
     {
@@ -171,13 +192,25 @@ public class MainController {
         stage.close();
     }
 
+    @FXML
+    protected void NBonBoughtBookButtonClick()
+    {
 
+    }
 
+    @FXML
+    protected void NBonBorrowedBookButtonClick()
+    {
+
+    }
 
 
     ///////////////////////////////////////////////////////
     //          Borrows.fxml                             //
     ///////////////////////////////////////////////////////
+
+    @FXML    Button Bback;
+
 
     @FXML
     protected void BonBackButtonClick()
@@ -195,6 +228,8 @@ public class MainController {
     //          Your-Collection.fxml                     //
     ///////////////////////////////////////////////////////
 
+    @FXML    Button YCback;
+
     @FXML
     protected void YConBackButtonClick()
     {
@@ -210,6 +245,9 @@ public class MainController {
     ///////////////////////////////////////////////////////
     //          Update.fxml                              //
     ///////////////////////////////////////////////////////
+
+    @FXML    Button Uback;
+
 
     @FXML
     protected void UonBackButtonClick()
