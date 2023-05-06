@@ -17,6 +17,7 @@ public class Functions_for_Find_Book_Info {
             Statement stmt = conn.createStatement();
             String prompt = "SELECT * FROM home_library.Book WHERE Title = ";
             prompt = prompt.concat(title);
+            prompt = prompt.concat(";");
             ResultSet rs = stmt.executeQuery(prompt);
             conn.close();
         } catch (SQLException e) {
@@ -39,6 +40,7 @@ public class Functions_for_Find_Book_Info {
             Statement stmt = conn.createStatement();
             String prompt = "SELECT * FROM Book WHERE ISBN = ";
             prompt = prompt.concat(isbn);
+            prompt = prompt.concat(";");
             ResultSet rs = stmt.executeQuery(prompt);
             conn.close();
         } catch (SQLException e) {
@@ -62,6 +64,7 @@ public class Functions_for_Find_Book_Info {
             Statement stmt = conn.createStatement();
             String prompt = "SELECT * FROM home_library.book JOIN home_library.author ON book.Author_id = author.Author_id WHERE author.First_Name = ";
             prompt = prompt.concat(fName);
+            prompt = prompt.concat(";");
             ResultSet rs = stmt.executeQuery(prompt);
             conn.close();
         } catch (SQLException e) {
@@ -84,6 +87,7 @@ public class Functions_for_Find_Book_Info {
             Statement stmt = conn.createStatement();
             String prompt = "SELECT * FROM home_library.book JOIN home_library.author ON book.Author_id = author.Author_id WHERE author.Last_Name = ";
             prompt = prompt.concat(lName);
+            prompt = prompt.concat(";");
             ResultSet rs = stmt.executeQuery(prompt);
             conn.close();
         } catch (SQLException e) {
@@ -106,6 +110,7 @@ public class Functions_for_Find_Book_Info {
             Statement stmt = conn.createStatement();
             String prompt = "SELECT * FROM home_library.book JOIN home_library.author ON book.Author_id = author.Author_id WHERE author.Gender = ";
             prompt = prompt.concat(gender);
+            prompt = prompt.concat(";");
             ResultSet rs = stmt.executeQuery(prompt);
             conn.close();
         } catch (SQLException e) {
@@ -128,6 +133,7 @@ public class Functions_for_Find_Book_Info {
             Statement stmt = conn.createStatement();
             String prompt = "SELECT * FROM home_library.book WHERE book.Year_Published = ";
             prompt = prompt.concat(yearPub);
+            prompt = prompt.concat(";");
             ResultSet rs = stmt.executeQuery(prompt);
             conn.close();
         } catch (SQLException e) {
@@ -151,6 +157,7 @@ public class Functions_for_Find_Book_Info {
             Statement stmt = conn.createStatement();
             String prompt = "SELECT * FROM home_library.book WHERE book.Num_of_Pages = ";
             prompt = prompt.concat(numPages);
+            prompt = prompt.concat(";");
             ResultSet rs = stmt.executeQuery(prompt);
             conn.close();
         } catch (SQLException e) {
@@ -174,6 +181,7 @@ public class Functions_for_Find_Book_Info {
             Statement stmt = conn.createStatement();
             String prompt = "SELECT * FROM home_library.book JOIN home_library.genre ON book.Genre = genre.Genre_id WHERE genre.Genre_Name = ";
             prompt = prompt.concat(genre);
+            prompt = prompt.concat(";");
             ResultSet rs = stmt.executeQuery(prompt);
             conn.close();
         } catch (SQLException e) {
@@ -196,6 +204,7 @@ public class Functions_for_Find_Book_Info {
             Statement stmt = conn.createStatement();
             String prompt = "SELECT * FROM home_library.book WHERE book.Book_Type = ";
             prompt = prompt.concat(type);
+            prompt = prompt.concat(";");
             ResultSet rs = stmt.executeQuery(prompt);
             conn.close();
         } catch (SQLException e) {
